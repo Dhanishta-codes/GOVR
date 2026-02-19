@@ -13,7 +13,7 @@ Most AI SDR tools optimise for generation speed.
 
 They answer: *"Did the workflow run?"*
 
-They don't answer: *"Should it have?"*
+They don't answer: *"Is it necessary to have?"*
 
 This creates four systemic gaps in enterprise AI outreach:
 
@@ -238,4 +238,4 @@ Enter any company name. The full governance workflow runs and returns a live ver
 
 ---
 
-*Built by Dhanishta*
+*-Dhanishta*
