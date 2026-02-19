@@ -13,35 +13,28 @@ Most AI SDR tools optimise for generation speed.
 
 They answer: *"Did the workflow run?"*
 
-They don't answer: *"Is it necessary to have?"*
+They don't answer: *"Should it have?"*
 
 This creates four systemic gaps in enterprise AI outreach:
 
-| Gap | What breaks |
-|-----|-------------|
-| No evaluation framework | Inconsistent output quality, brand risk |
-| No revenue alignment model | High activity, low conversion |
-| Static governance rules | No adaptation to performance history |
-| No market awareness | Teams operating blind relative to industry baseline |
+-No evaluation framework 
+-No revenue alignment model 
+-Static governance rules 
+-No market awareness 
 
-Scale amplifies both strength and weakness. Without evaluation and governance, AI becomes a multiplier of risk.
-
+The result is high activity, low conversion, and no real visibility into why.
+In the absence of evaluation layer, teams can't tell the difference between a workflow that performed and one that just completed.
+Scale makes this worse, not better. Without governance,control and evaluation AI becomes a multiplier of risk.
 ---
 
 ## The Gap
 
-Existing tools each solve one piece of the problem — none of them connect the pieces.
-
-| Tool Category | What it does | What it misses |
-|---------------|-------------|----------------|
-| Data enrichment (Apollo, Clay) | Finds who to reach | No signal on whether to reach them |
-| Sequencing (Outreach, Instantly) | Automates send cadences | No quality control before sending |
-| AI SDRs (11x, Artisan) | Replaces the SDR motion | No governance over what gets sent |
-| Revenue intelligence (Gong, Clari) | Analyses what happened | Reactive — damage already done |
-
-The result: teams know *how* to automate outreach. Nobody has built the layer that decides *whether it should run*.
+The existing stack isn't bad — it's incomplete.
+Apollo and Clay find who to reach. Outreach and Instantly send at volume. AI SDRs like Artisan and 11x automate the motion entirely. Gong and Clari tell you what went wrong after the fact.
+None of them answer the question that actually matters before execution: is this workflow revenue-ready?
 
 That is the gap GOVR fills.
+A layer that evaluates, scores, and governs before anything reaches a prospect.
 
 ---
 
@@ -51,20 +44,20 @@ GOVR introduces a **three-layer architecture** that sits between AI generation a
 
 ```mermaid
 flowchart TD
-    subgraph L1["Layer 1 — Workflow Execution"]
+    subgraph L1["Workflow Execution"]
         A1[Research] --> A2[ICP Qualification]
         A2 --> A3[Persona Identification]
         A3 --> A4[Email Generation]
         A4 --> A5[Contact Validation]
     end
 
-    subgraph L2["Layer 2 — Evaluation Intelligence"]
+    subgraph L2["Evaluation Intelligence"]
         B1[Workflow Performance Engine] --> B2[Benchmark Scoring Engine]
         B2 --> B3[Business Effectiveness Engine]
         B3 --> B4[Learning Memory Engine]
     end
 
-    subgraph L3["Layer 3 — Governance & Control"]
+    subgraph L3["Governance & Control"]
         C1[Risk Scoring] --> C2[Dependency Health]
         C2 --> C3[Confidence Modelling]
         C3 --> C4[Adaptive Threshold Engine]
@@ -91,29 +84,29 @@ Only workflows that pass all three layers are allowed to scale.
 
 ## Architecture
 
-### Layer 1 — Workflow Execution
+### Workflow Execution
 
 Handles company research, ICP qualification, persona identification, email generation, and contact validation via a LangGraph state machine.
 
 This layer produces output. It does not decide whether that output should be executed.
 
-### Layer 2 — Evaluation Intelligence
+### Evaluation Intelligence
 
 Four engines run in sequence:
 
-**Workflow Performance Engine**  
+**Workflow Performance**  
 Scores the workflow across six revenue-weighted dimensions: research depth, qualification strength, persona validity, email effectiveness, contact authority, governance stability. Outputs a unified performance score and strategic recommendation.
 
-**Benchmark Scoring Engine**  
+**Benchmark Scoring**  
 Compares performance against industry baselines. Outputs competitive position: Elite / Strong / Parity / Below Standard. Reframes evaluation from *"Is it good?"* to *"Is it competitive?"*
 
-**Business Effectiveness Engine**  
+**Business Effectiveness**  
 Models expected revenue impact using qualification score, workflow performance, and contact authority. Outputs conversion probability and revenue readiness signal.
 
-**Learning Memory Engine**  
+**Learning Memory**  
 Stores historical workflow scores and governance decisions. Generates system confidence score and control bias — making governance adaptive, not static.
 
-### Layer 3 — Governance & Control
+### Governance & Control
 
 Five signals converge into one decision:
 
@@ -126,22 +119,6 @@ Five signals converge into one decision:
 | Control Decision | Final authority — APPROVED, BLOCKED, or REWRITE |
 
 **Human Override** is available at any point. All overrides are logged with timestamp, actor, and governance state at time of intervention.
-
----
-
-## Tech Stack
-
-| Layer | Technology |
-|-------|-----------|
-| Agent orchestration | LangGraph |
-| AI providers | Google Gemini, Anthropic Claude, Groq |
-| Web search | Tavily |
-| Contact finding | Apollo.io |
-| Email sending | Gmail API |
-| Tracking | Google Sheets |
-| Backend | FastAPI |
-| Frontend | Vanilla HTML/CSS/JS |
-| Deployment | Railway |
 
 ---
 
@@ -210,23 +187,6 @@ ENABLE_EMAIL_SENDING=False
 ENABLE_LINKEDIN_OUTREACH=False
 ENABLE_SHEETS_LOGGING=False
 ```
-
----
-
-## What This Demonstrates
-
-This project is not a demo wrapper around an LLM.
-
-It is a production-oriented system that reflects how AI should be deployed in revenue-critical workflows:
-
-- **Problem-first architecture** — every layer exists because of a specific enterprise gap
-- **Evaluation before execution** — nothing runs without being scored first
-- **Revenue-weighted scoring** — dimensions weighted by business impact, not surface quality
-- **Adaptive governance** — strictness evolves with performance history
-- **Human-in-the-loop by design** — override capability built in, not bolted on
-- **Responsible AI thinking** — governance is the foundation, not a feature
-
-It reframes AI from automation tool to governed revenue operator.
 
 ---
 
