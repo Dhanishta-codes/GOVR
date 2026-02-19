@@ -111,13 +111,21 @@ Stores historical workflow scores and governance decisions. Generates system con
 
 Five signals converge into one decision:
 
-| Signal | What it detects |
-|--------|----------------|
-| Risk Score | Guardrail failures, retry instability, missing outputs |
-| Dependency Health | Structural integrity of the workflow chain |
-| Confidence Score | Derived from performance stability and evaluation consistency |
-| Adaptive Threshold | Tightens or loosens based on historical performance |
-| Control Decision | Final authority — APPROVED, BLOCKED, or REWRITE |
+
+-Risk Score:
+Guardrail failures, retry instability, missing outputs.
+
+-Dependency Health:
+Structural integrity of the workflow chain.
+
+-Confidence Score:
+Derived from performance stability and evaluation consistency.
+
+-Adaptive Threshold:
+Tightens or loosens based on historical performance.
+
+-Control Decision:
+Final authority — APPROVED, BLOCKED, or REWRITE.
 
 **Human Override** is available at any point. All overrides are logged with timestamp, actor, and governance state at time of intervention.
 
