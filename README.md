@@ -3,7 +3,7 @@
 > An AI SDR agent with a production-grade evaluation and governance layer.  
 > Built to ensure AI-generated outreach aligns with revenue outcomes — not just task completion.
 
-**Live Demo → [web-production-9ea0.up.railway.app](https://web-production-9ea0.up.railway.app)**
+**Live Demo → [GOVR](https://govr.onrender.com)**
 
 ---
 
@@ -232,7 +232,7 @@ It reframes AI from automation tool to governed revenue operator.
 
 ## Live Demo
 
-**[https://web-production-9ea0.up.railway.app](https://web-production-9ea0.up.railway.app)**
+**[GOVR](https://govr.onrender.com)**
 
 Enter any company name. The full governance workflow runs and returns a live verdict.
 
